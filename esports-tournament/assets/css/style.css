@@ -1,0 +1,399 @@
+:root {
+    --bg-dark: #0a0e17;
+    --bg-card: #121826;
+    --bg-card-hover: #1a2236;
+    --bg-surface: #1e293b;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --border-glow: rgba(0, 240, 255, 0.35);
+    --primary-neon: #00f0ff;
+    --secondary-neon: #ff4655;
+    --accent-gold: #ffb800;
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;       /* High-contrast crisp light slate */
+    --text-dim: #94a3b8;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Fix Bootstrap Text Muted Contrast in Dark Mode */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-dim {
+    color: var(--text-dim) !important;
+}
+
+.small, small {
+    color: inherit;
+}
+
+/* Esports Typography */
+h1, h2, h3, h4, h5, h6, .brand-font {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.text-cyan {
+    color: var(--primary-neon) !important;
+}
+
+.text-flame {
+    color: var(--secondary-neon) !important;
+}
+
+.text-gold {
+    color: var(--accent-gold) !important;
+}
+
+/* Navbar Custom Styling */
+.navbar-custom {
+    background: rgba(10, 14, 23, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.85rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .navbar-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-custom .nav-link {
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: var(--primary-neon);
+}
+
+/* Buttons */
+.btn-neon-primary {
+    background: linear-gradient(135deg, #00f0ff 0%, #00a3ff 100%);
+    color: #000000;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.btn-neon-primary:hover {
+    background: linear-gradient(135deg, #33f3ff 0%, #1ab0ff 100%);
+    color: #000000;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-neon-outline {
+    background: transparent;
+    color: var(--primary-neon);
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1.5px solid var(--primary-neon);
+    padding: 0.55rem 1.35rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-neon-outline:hover {
+    background: rgba(0, 240, 255, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-flame {
+    background: linear-gradient(135deg, #ff4655 0%, #ff7300 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(255, 70, 85, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-flame:hover {
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(255, 70, 85, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Custom High-Contrast Outline Button */
+.btn-outline-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #f1f5f9 !important;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-secondary:hover {
+    background: rgba(0, 240, 255, 0.15);
+    border-color: var(--primary-neon);
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+}
+
+/* Cards & Surface */
+.esports-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.esports-card:hover {
+    border-color: var(--border-glow);
+    background: var(--bg-card-hover);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+.esports-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-neon), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.esports-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Borders */
+.border-flame {
+    border-color: rgba(255, 70, 85, 0.35) !important;
+}
+
+.border-cyan {
+    border-color: rgba(0, 240, 255, 0.35) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding: 6rem 0 4.5rem 0;
+    background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(255, 70, 85, 0.05) 0%, transparent 50%),
+                var(--bg-dark);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 50px;
+    color: var(--primary-neon);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin-bottom: 2rem;
+}
+
+/* Feature & Step Icons */
+.feature-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background: rgba(0, 240, 255, 0.12);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--primary-neon);
+    margin-bottom: 1.25rem;
+}
+
+.step-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    height: 100%;
+}
+
+.step-number {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary-neon);
+    color: #000;
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Badges */
+.badge-custom {
+    padding: 0.4rem 0.8rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.badge-upcoming {
+    background: rgba(255, 184, 0, 0.2);
+    color: #ffc107;
+    border: 1px solid rgba(255, 184, 0, 0.4);
+}
+
+.badge-open {
+    background: rgba(0, 240, 255, 0.2);
+    color: #00f0ff;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+}
+
+.badge-live {
+    background: rgba(255, 70, 85, 0.2);
+    color: #ff4655;
+    border: 1px solid rgba(255, 70, 85, 0.4);
+}
+
+.badge-completed {
+    background: rgba(203, 213, 225, 0.15);
+    color: #cbd5e1;
+    border: 1px solid rgba(203, 213, 225, 0.3);
+}
+
+/* List Groups in Dark Mode */
+.list-group-item {
+    background-color: #161f30 !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+
+/* Footer */
+.footer-custom {
+    background: #070a10;
+    border-top: 1px solid var(--border-color);
+    padding: 3.5rem 0 1.5rem 0;
+    margin-top: auto;
+}
+
+.footer-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-link:hover {
+    color: var(--primary-neon);
+    transform: translateX(3px);
+}
+
+/* Form Styles */
+.form-control-custom, .form-select-custom {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+}
+
+.form-control-custom:focus, .form-select-custom:focus {
+    background-color: var(--bg-surface);
+    border-color: var(--primary-neon);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+}
+
+.form-label-custom {
+    font-weight: 700;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
+}
+
+/* Tables */
+.table-esports {
+    --bs-table-bg: var(--bg-card);
+    --bs-table-color: var(--text-main);
+    border-color: var(--border-color);
+}
+
+.table-esports th {
+    background: var(--bg-surface);
+    color: var(--primary-neon);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.table-esports td {
+    color: var(--text-main);
+}
